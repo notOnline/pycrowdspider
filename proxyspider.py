@@ -23,11 +23,11 @@ http://www.ip3366.net/?stype=1&page=
 
 def execute():
     proxy_spiders = [# proxy_spider_free_proxy_list,
-                     # proxy_spider_xicidaili,
-                     #proxy_spider_89ip,
-                     #proxy_spider_ip3366,
+                     proxy_spider_xicidaili,
+                     proxy_spider_89ip,
+                     proxy_spider_ip3366,
                      proxy_spider_goubanjia,
-                     #proxy_spider_66ip
+                     proxy_spider_66ip
                      ]
     for proxy_spider in proxy_spiders:
         try:
@@ -114,7 +114,7 @@ def proxy_spider_66ip():
     chromeOptions.add_argument("--window-position=10000,10000 ")
     browser = webdriver.Chrome(chrome_options=chromeOptions)
     headers['Host'] = 'www.ip3366.net'
-    for page in range(1, 10):  # 400
+    for page in range(1, 2):  # 400
         url = 'http://www.66ip.cn/{}.html'.format(page)
         print('spider:{}'.format(url))
         browser.get(url)
